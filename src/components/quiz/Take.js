@@ -1,12 +1,53 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
+import Helmet from 'react-helmet';
 
-class Take extends React.Component {
-    constructor (props){
+class Take extends Component {
+    /*constructor (props){
+        super(props);
         
+    }*/
+
+    increaseCount = () =>{
+        this.setState({
+            counter: 5
+        });
     }
     render () {
         return (
-            <p>Play</p>
+            <Fragment>
+                <Helmet><title>Quiz | Questions</title></Helmet>
+                <div className="questions">
+                    <h2>Quiz Mode</h2>
+                    <div className="lifeline-container">
+                        <p>
+                            <span className='mdi mdi-set-center mdi-24px lifeline-icon'></span><span className="lifeline">2</span>
+                        </p>
+                        <p>
+                            <span className='mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon'></span><span className="lifeline">5</span> 
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <span className='left ' style={{ float: 'left'}}>1 of 15</span>
+                            <span className='right'>2:15<span className='mdi mdi-clock-outline mdi-24px'></span></span>
+                        </p>
+                    </div>
+                    <h5>Google was founded in what years?</h5>
+                    <div className="options-container">
+                        <div className="option">1997</div>
+                        <div className="option">1998</div>
+                    </div>
+                    <div className="options-container">
+                    <div className="option">1999</div>
+                    <div className="option">2000</div>
+                    </div>
+                    <div className="button-container">
+                        <button>Previous</button>
+                        <button>Next</button>
+                        <button>Quit</button>
+                    </div>
+                </div>
+            </Fragment>
         );
     }
 }
